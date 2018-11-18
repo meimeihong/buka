@@ -4,8 +4,6 @@
 		<Homehead></Homehead>
 		<Banner></Banner>
 		<Groom></Groom>
-		<!--	<New></New>-->
-		<!--<Vip></Vip>-->
 		<Free></Free>
 		<Boil></Boil>
 		<President></President>
@@ -31,8 +29,6 @@
 	import Homehead from '../../commons/Homehead.vue';
 	import Banner from './Banner.vue';
 	import Groom from './Groom.vue';
-	//	import New from './Home/New.vue';
-	//	import Vip from './Home/Vip.vue';
 	import Free from './Free.vue';
 	import Boil from './Boil.vue';
 	import President from './President.vue';
@@ -50,8 +46,6 @@
 			Homehead,
 			Banner,
 			Groom,
-			//			New,
-			//			Vip,
 			Free,
 			Boil,
 			President,
@@ -63,8 +57,7 @@
 			},
 			top() {
 				window.addEventListener('scroll', ()=> {
-					let bodyDistance = document.documentElement.scrollTop
-					console.log(bodyDistance)
+					var  bodyDistance = document.documentElement.scrollTop
 					if(bodyDistance >= 300) {
 						this.topshow = true;
 					} else {

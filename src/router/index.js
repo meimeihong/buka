@@ -13,13 +13,7 @@ export default new Router({
       path: '/',
 //    redirect:'/home',//重定向
       name: 'Home',
-      component: Home,
-      children:[
-//      {path:'search',name:'search',component:Search}
-//      {path:'reg',name:'reg',component:Reg},
-//      {path:'info',name:'info',component:Info}
-
-      ]
+      component: Home
     },
      {
       path: '/banners',

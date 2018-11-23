@@ -2,7 +2,7 @@
 
 <div id="Ranking">
    <Header></Header>
-   <Homehead></Homehead>
+   <Homehead :listname="listname"></Homehead>
     <div class="container">
     	 <!--v-infinite-scroll="loadMore"
         infinite-scroll-disabled="loading"
@@ -31,11 +31,13 @@ import Header from '../../commons/Header.vue';
 import Homehead from "../../commons/Homehead.vue";
 import {InfiniteScroll  } from 'mint-ui';
 Vue.use(InfiniteScroll);
+	
     export default{
         name:'Ranking',
         data(){
             return{
-                Rankinglist:[]
+                Rankinglist:[],
+                listname:'排行',
             }
         },
         components:{
@@ -44,6 +46,8 @@ Vue.use(InfiniteScroll);
         },
         methods:{
             GetRankingListData(){
+            var hash=window.location.href;
+			sessionStorage.setItem("skip", hash);	
             this.$axios.post('/api/ranking/get_data')
              .then((res)=>{
                  this.Rankinglist=res.data.datas.items;

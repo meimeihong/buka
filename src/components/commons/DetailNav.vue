@@ -1,27 +1,36 @@
 <template>
 	<div class="head-detail-nav">
-		<a href="" class="head-detail-return" @click='back()'>
-			<span class="return-icon fa fa-arrow-left"></span>
+		<a href="javascript:0" class="head-detail-return" >
+			<span @click="returns" class="return-icon fa fa-arrow-left"></span>
 		</a>
 		<span class="head-detail-center">{{mid}}</span>
 		<a href="" class="head-detail-download fa fa-arrow-down"></a>
 	</div>
 </template>
 <script>
-	var datas = JSON.parse(sessionStorage.getItem("data"));
-	console.log(datas)
 	export default {
 		name: "DetailNav",
 		props: ["mid"],
 		data() {
 			return {
-				data: datas
 			}
 		},
 		methods: {
-			back() {
-				console.log("i want back");
-
+			returns() {
+				var skip = sessionStorage.getItem("skip");
+				if(skip == 'http://localhost:8080/#/home') {
+					this.$router.push({
+						path: '/home'
+					})
+				}else if(skip == 'http://localhost:8080/#/Ranking'){
+					this.$router.push({
+						path: '/Ranking'
+					})
+				}else{
+					this.$router.push({
+						path: '/CategoryList'
+					})			
+				}
 			}
 
 		}

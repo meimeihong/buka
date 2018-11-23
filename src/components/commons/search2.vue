@@ -8,7 +8,7 @@
 					:placeholder="place" v-model="val" 
 					 v-on:keyup.enter="sousuo"/>
 				</li>
-				<li class="se">取消</li>
+				<li class="se" @click="returns">取消</li>
 			</ul>
 		</div>
 		<div class="find" v-show="show1">
@@ -65,6 +65,16 @@
 							})
 					}
 
+				},
+				returns(){
+					var skip=sessionStorage.getItem("skip");
+					if(skip=='http://localhost:8080/#/Ranking'){
+					this.$router.push({
+					path: '/Ranking'})
+				}else{
+					this.$router.push({
+					path: '/Category'})
+				}
 				}
 			}
 		

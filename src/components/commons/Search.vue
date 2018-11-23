@@ -2,7 +2,7 @@
 	<div id="search">
 		<div class="top">
 			<ul>
-				<li class="ii"><i class="fa fa-chevron-left"></i></li>
+				<li class="ii" @click="returns"><i class="fa fa-chevron-left"></i></li>
 				<li class="ii i2"><i class="fa fa-search"></i></li>
 				<li class="inp">
 					<input type="text" name="" id="" value="" :placeholder="place" 
@@ -126,6 +126,10 @@
 					}
 
 				}
+			},
+			returns(){
+				this.$router.push({
+					path: '/home'})
 			}
 		}
 	}

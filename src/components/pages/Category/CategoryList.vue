@@ -3,8 +3,8 @@
 	<div id="CategoryList">
 		<Header></Header>
 		<div class="head-detail-nav">
-			<a href="" class="head-detail-return">
-				<span class="return-icon fa fa-arrow-left"></span>
+			<a href="javascript:0" class="head-detail-return">
+				<span @click="returns" class="return-icon fa fa-arrow-left"></span>
 			</a>
 			<span class="head-detail-center">{{fonts.font}}</span>
 			<span class="none"></span>
@@ -51,7 +51,7 @@
 					this.$axios.post('/api/category/ajax_group', qs.stringify({
 						param: this.fonts.param,
 						gname: this.fonts.font,
-						start: this.fonts.start
+						start: 0
 						}))
 						.then((res) => {
 							var ress = res.data.datas.items;
@@ -75,6 +75,10 @@
 			},
 			loadMore() {
 				this.GetCategoryListData();
+			},
+			returns(){
+				this.$router.push({
+					path: '/Category'})
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 	<div class="head">
 		<a class="im"><img :src="img"/></a>
 	<a class="load" @click='show'>安装APP</a>
-	<a class="find"><i class="fa fa-search"></i></a>
+	<a class="find" @click="finds"><i class="fa fa-search"></i></a>
 	</div>
 	<Shade v-show="sel" :show='show'></Shade>
 </div>
@@ -23,6 +23,21 @@
 		methods:{
 			show:function(){
 				this.sel=!this.sel;
+			},
+			finds(){
+				var skip=sessionStorage.getItem("skip");
+				console.log(skip);
+				if(skip=='http://localhost:8080/#/home'){
+					this.$router.push({
+					path: '/search'})
+				}else if(skip=='http://localhost:8080/#/Ranking'){
+					this.$router.push({
+					path: '/search2'})
+				}else if(skip=='http://localhost:8080/#/Category'){
+					this.$router.push({
+					path: '/search2'})
+				}
+				
 			}
 		},
 		components:{

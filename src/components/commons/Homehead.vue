@@ -3,7 +3,7 @@
 		<ul>
 		<li v-for="(items,index) in lis" 
 			:key="index" @click="select(items)" 
-			:class="sel===items?'sl':''">
+			:class="listname===items?'sl':''">
 			<a>{{items}}</a>
 		</li>
 		</ul>
@@ -14,15 +14,25 @@
 	import Vue from 'vue';
 	export default{
 		name:'Homehead',
+		props:['listname'],
 		data(){
 			return{
 				lis:['推荐','排行','分类'],
-				sel:'推荐'
 			}
 		},
 		methods:{
 			select(item){
 				this.sel=item;
+				if(item=='排行'){
+					this.$router.push({
+					path: '/Ranking'})
+				}else if(item=='分类'){
+					this.$router.push({
+					path: '/Category'})
+				}else if(item=='推荐'){
+					this.$router.push({
+					path: '/home'})
+				}
 		
 		}
 	}

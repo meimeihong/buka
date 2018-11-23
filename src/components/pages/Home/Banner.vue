@@ -43,7 +43,8 @@
 				
 			},
 			setid(id) {
-				sessionStorage.setItem("id", id);
+				sessionStorage.setItem("data", id);
+				
 				this.$router.push({path:'/Banners'})
 			}
 		},

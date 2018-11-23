@@ -1,6 +1,6 @@
 <template>
 <div class="banners" >
-	<div class="ban" v-for="(item,index) in imgs" :key='index'>
+	<div @click="detail" class="ban" v-for="(item,index) in imgs" :key='index'>
 		<img :src="item"/>
 	</div>
 	
@@ -17,7 +17,7 @@
 		},
 		methods:{
 			getimg(){
-				var id=sessionStorage.getItem('id');
+				var id=sessionStorage.getItem('data');
 				if(id==2635){
 				this.imgs=['http://i-r7.ibuka.cn/event/20181026/01.jpg',
 				'http://i-r7.ibuka.cn/event/20181026/02.jpg',
@@ -43,6 +43,15 @@
 					'http://i-r7.ibuka.cn/event/20180720/6.jpg',
 					'http://i-r7.ibuka.cn/event/20180720/7.jpg']
 				}				
+			},
+			detail(){
+				var data=sessionStorage.getItem("data");
+				this.$router.push({
+					path: `/m/${data.ctrlparam}`,
+					params: {
+						userId: data.ctrlparam
+					}
+				})
 			}
 		},
 		created() {

@@ -1,7 +1,7 @@
 <template>
 	<div id="home">
 		<Header></Header>
-		<Homehead></Homehead>
+		<Homehead :listname="listname"></Homehead>
 		<Banner></Banner>
 		<Groom></Groom>
 		<Free></Free>
@@ -36,12 +36,14 @@
 	import President from './President.vue';
 	import First from './First.vue';
 	import Shade from '../../commons/shade'
+
 	export default {
 		name: 'Home',
 		data() {
 			return {
 				topshow: false,
-				sel:false
+				sel:false,
+				listname:'推荐'
 			}
 		},
 		components: {
@@ -57,6 +59,8 @@
 		},
 		methods: {
 			top() {
+					var hash=window.location.href;
+					sessionStorage.setItem("skip", hash);
 				window.addEventListener('scroll', ()=> {
 					var  bodyDistance = document.documentElement.scrollTop
 					if(bodyDistance >= 300) {

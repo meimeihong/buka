@@ -8,9 +8,11 @@
 		<Boil></Boil>
 		<President></President>
 		<First></First>
+		<Shade v-show="sel" :show='show'></Shade>
 		<div class="bottom">
 			<div><img src="../../../img/logo.png" /></div>
-			<div><span @click='shades'>安装客户端</span></div>
+			<div><span @click='show'>安装客户端</span></div>
+			<p>Copyright@buka.cn</p>
 		</div>
 		<div class="backtop" v-show='topshow' @click="topback">
 			<transition enter-active-class='fadeIn animated' leave-active-class='fadeOut animated'>
@@ -33,12 +35,13 @@
 	import Boil from './Boil.vue';
 	import President from './President.vue';
 	import First from './First.vue';
+	import Shade from '../../commons/shade'
 	export default {
 		name: 'Home',
 		data() {
 			return {
-				shade: false,
-				topshow: false
+				topshow: false,
+				sel:false
 			}
 		},
 		components: {
@@ -49,12 +52,10 @@
 			Free,
 			Boil,
 			President,
-			First
+			First,
+			Shade
 		},
 		methods: {
-			shades: function() {
-				this.shade = !this.shade;
-			},
 			top() {
 				window.addEventListener('scroll', ()=> {
 					var  bodyDistance = document.documentElement.scrollTop
@@ -67,6 +68,9 @@
 			},
 			topback(){
 				document.documentElement.scrollTop=0	
+			},
+			show:function(){
+				this.sel=!this.sel;
 			}
 		},
 		created() {
@@ -99,7 +103,17 @@
 					.fs(15);
 					background: #fe960e;
 					border-radius: 5px;
+					color:white;
 				}
+			}
+			p{
+				.w(375);
+				.h(17);
+				.fs(13);
+				.lh(17);
+				text-align:center;
+				.mg(10,0,0,0);
+				color:@font;
 			}
 		}
 		.backtop {

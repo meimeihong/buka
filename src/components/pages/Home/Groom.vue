@@ -235,7 +235,7 @@
 					overflow: hidden;
 					position: relative;
 					.w(176);
-					.h(152);
+					.h(158);
 					float: left;
 					.mg(0, 0, 10, 0);
 					img {
@@ -268,6 +268,7 @@
 			}
 		}
 		.div4 {
+			overflow: hidden;
 			.mg(20, 0, 15, 0);
 			.w(360);
 			.h(317);
@@ -281,7 +282,7 @@
 			.div41 {
 				img {
 					float: left;
-					.w(176);
+					.w(173);
 					.h(117);
 				}
 			}

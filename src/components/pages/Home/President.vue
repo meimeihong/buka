@@ -34,7 +34,6 @@
 						}
 					})
 					.then((res) => {
-						//						this.datas = res.data.datas.items[8].items;
 						this.datas.push(res.data.datas.items[8].items[2])
 						for(var i = 0; i < res.data.datas.items[8].items.length - 1; i++) {
 							this.datas1.push(res.data.datas.items[8].items[i])

@@ -39,13 +39,10 @@
 						}
 					})
 					.then((res) => {
-//						console.log(res.data.datas.items[7].items,
-//							res.data.datas.items[7].items.length)
 						this.datas.push(res.data.datas.items[7].items[0])
 						for(var i = 1; i < res.data.datas.items[7].items.length; i++) {
 							this.datas1.push(res.data.datas.items[7].items[i])
 						}
-//						console.log(this.datas1)
 						this.title = res.data.datas.items[7].title;
 					})
 					.catch((err) => {
@@ -139,7 +136,7 @@
 				li {
 					position: relative;
 					.w(176);
-					.h(152);
+					.h(155);
 					float: left;
 					.mg(0, 0, 10, 0);
 					img {

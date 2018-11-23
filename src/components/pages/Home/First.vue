@@ -166,7 +166,7 @@
 					li {
 						position: relative;
 						.w(176);
-						.h(152);
+						.h(155);
 						float: left;
 						.mg(0, 0, 10, 0);
 						img {

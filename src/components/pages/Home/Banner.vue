@@ -5,7 +5,7 @@
 				<div class="swiper-slide" 
 					v-for="(item,index) in datas" 
 					:key="index" >
-					<img :src="item.pic_url" @click='setid(item.id)'/>
+					<img :src="item.pic_url" @click='setid(item)'/>
 				</div>
 			</div>
 			<div class="swiper-pagination"></div>
@@ -28,12 +28,11 @@
 				{params:{page:1}})
 				.then((res)=>{
 					this.datas=res.data.datas.items[0].items;
-//					console.log(this.datas);
 					Vue.nextTick(() => {
 					this.mySwiper=new Swiper('.swiper-container', {
 						loop: true, // 循环模式选项   
 //						scrollbar: {
-//							el: '.swiper-scrollbar',
+//							el: '.swiper-pagination',
 //						}
 					})
 				});

@@ -5,13 +5,14 @@ import Banners from '../components/pages/Home/Banner1'
 import Search from '../components/commons/Search'
 import Detail from '../components/commons/Detail'
 import Search2 from '../components/commons/Search2'
+import Reg from '../components/commons/reg'
+import Login from '../components/commons/login'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-//    redirect:'/home',//重定向
       name: 'Home',
       component: Home
     },
@@ -19,6 +20,16 @@ export default new Router({
       path: '/banners',
       name: 'Banners',
       component: Banners
+    },
+    {
+      path: '/reg',
+      name: 'reg',
+      component: Reg
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/search',

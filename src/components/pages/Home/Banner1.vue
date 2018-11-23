@@ -42,12 +42,7 @@
 					'http://i-r7.ibuka.cn/event/20180720/5.jpg',
 					'http://i-r7.ibuka.cn/event/20180720/6.jpg',
 					'http://i-r7.ibuka.cn/event/20180720/7.jpg']
-				}
-				console.log(id);
-				
-			},
-			fd(){
-				
+				}				
 			}
 		},
 		created() {

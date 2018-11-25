@@ -5,7 +5,7 @@
 				<div class="swiper-slide" 
 					v-for="(item,index) in datas" 
 					:key="index" >
-					<img :src="item.pic_url" @click='setid(item)'/>
+					<img :src="item.pic_url" @click='setid(item.id,item)'/>
 				</div>
 			</div>
 			<div class="swiper-pagination"></div>
@@ -42,9 +42,10 @@
 				})
 				
 			},
-			setid(id) {
-				sessionStorage.setItem("data", id);
-				
+			setid(id,data) {
+				sessionStorage.setItem("id", id);
+				var dt = JSON.stringify(data);
+				sessionStorage.setItem("data", dt);
 				this.$router.push({path:'/Banners'})
 			}
 		},

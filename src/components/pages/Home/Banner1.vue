@@ -17,7 +17,7 @@
 		},
 		methods:{
 			getimg(){
-				var id=sessionStorage.getItem('data');
+				var id=sessionStorage.getItem('id');
 				if(id==2635){
 				this.imgs=['http://i-r7.ibuka.cn/event/20181026/01.jpg',
 				'http://i-r7.ibuka.cn/event/20181026/02.jpg',
@@ -46,10 +46,11 @@
 			},
 			detail(){
 				var data=sessionStorage.getItem("data");
+				var datas=JSON.parse(data);
 				this.$router.push({
-					path: `/m/${data.ctrlparam}`,
+					path: `/m/${datas.id}`,
 					params: {
-						userId: data.ctrlparam
+						userId: datas.id
 					}
 				})
 			}

@@ -35,7 +35,6 @@ import Vue from 'vue';
 import Header from '../../commons/Header.vue';
 import DetailNav from "../../commons/DetailNav.vue";
 import {InfiniteScroll  } from 'mint-ui';
-
 Vue.use(InfiniteScroll);
     export default{
         name:'CategoryList',
@@ -57,15 +56,13 @@ Vue.use(InfiniteScroll);
               this.$axios.post('/api/category/ajax_group', qs.stringify({
 						param:this.fonts.param,
 						gname:this.fonts.font,
-						start: this.fonts.start
+						start: this.fonts.start,
+						fun: this.fonts.fun,
 					}))
 					.then((res) => {
 						var ress=res.data.datas.items
-						console.log(ress)
 						this.CategoryList=this.CategoryList.concat(ress)
-						console.log(this.CategoryList)
 						this.fonts.start+=16
-						console.log(this.fonts.start)
 					})
 					.catch((err) => {
 						console.log(err);

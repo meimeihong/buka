@@ -26,7 +26,6 @@
 			},
 			finds(){
 				var skip=sessionStorage.getItem("skip");
-				console.log(skip);
 				if(skip=='http://localhost:8080/#/home'){
 					this.$router.push({
 					path: '/search'})

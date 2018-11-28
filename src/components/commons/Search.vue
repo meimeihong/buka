@@ -66,10 +66,7 @@
 						key: item
 					}))
 					.then((res) => {
-						console.log(res);
-
 						this.data = res.data.datas.items;
-						console.log(this.data);
 					})
 					.catch((err) => {
 						console.log(err);

@@ -276,7 +276,6 @@
 		methods: {
 			setid(datas) {
 				var dt = JSON.stringify(datas);
-				console.log(dt);
 				sessionStorage.setItem("font", dt);
 				this.$router.push({
 					path: '/CategoryList'

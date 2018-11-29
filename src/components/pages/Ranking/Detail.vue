@@ -22,7 +22,7 @@
 			<div class="mangadir-glass-text">
 				<p class="mangadir-glass-name">{{data.name}}</p>
 				<p class="mangadir-glass-author">
-					<a href="">{{data.author}}</a>
+					<a href="javascript:0">{{data.author}}</a>
 				</p>
 			</div>
 			<div class="mangadir-glass-btns">

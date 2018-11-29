@@ -2,7 +2,7 @@
 <div id="header">
 	<div class="head">
 		<a class="im"><img :src="img"/></a>
-	<a class="load" @click='show'>安装APP</a>
+	<!-- <a class="load" @click='show'>安装APP</a> -->
 	<a class="find" @click="finds"><i class="fa fa-search"></i></a>
 	</div>
 	<Shade v-show="sel" :show='show'></Shade>
@@ -55,16 +55,16 @@
 		position:relative;
 		.lh(44);
 		.w(375);
-		.h(40);
+		.h(44);
 		background:@bg-color;
 		.im{.mg(15,0,0,0);
-			.w(120);
-			.h(35);
-			.mg(0,0,0,10);
+			.w(170);
+			.h(40);
+			.mg(0,0,0,20);
 			display: inline-block;
 			img{
-				.w(60);
-				.h(29);
+				.w(80);
+				.h(30);
 			}
 		}
 		.load{
